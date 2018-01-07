@@ -29,6 +29,9 @@ public class ResultSupport<T> implements Serializable {
      */
     private Exception exception;
 
+    /**
+     * @return 返回成功的实例
+     */
     public static<T> ResultSupport<T> getInstance(boolean expr,String resultCode,String msg,T model){
         ResultSupport<T> result = new ResultSupport<T>();
         result.setSuccess(expr);
@@ -38,6 +41,9 @@ public class ResultSupport<T> implements Serializable {
 
         return result;
     }
+    /**
+     * @return 返回失败的实例
+     */
     public static<T> ResultSupport<T> getInstance(Exception e){
         ResultSupport<T> result = new ResultSupport<T>();
         result.setException(e);
